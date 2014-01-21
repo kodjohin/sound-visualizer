@@ -1,4 +1,3 @@
-
 if(navigator.userAgent.match(/Opera|OPR\//) ? true : false){
     loadSounds(this, {
         buffer: 'sounds/bofas.wav'
@@ -13,8 +12,10 @@ else{
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
 
+var loader = document.querySelector('.loader');
 var cvs = document.querySelector('canvas')
 var drawContext = cvs.getContext('2d');
+var alpha = 0;
 
 cvs.style.visibility = 'hidden';
 
@@ -23,7 +24,15 @@ WebAudio.SMOOTHING = .5;
 function draw(){
     cvs.width = WIDTH;
     cvs.height = HEIGHT;
+    
+    loader.style.opacity -= .1;
+    alpha += .01;
+    if(alpha > 1){
+        alpha = 1;
+    }
+    
     WebAudio.frequencyData;
+    
     // Draw the frequency domain chart.
     for (var i = 0; i < WebAudio.frequencyBinCount; i++) {
         var value = WebAudio.freqs[i];
@@ -31,6 +40,7 @@ function draw(){
         var height = HEIGHT * percent;
         var offset = HEIGHT - height - 1;
         drawContext.strokeStyle = 'white';
+        drawContext.globalAlpha = alpha;
         drawContext.beginPath();
         drawContext.lineWidth = .5;
 
