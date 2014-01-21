@@ -1,6 +1,48 @@
+$LOADER_WIDTH : 50px;
+$LOADER_HEIGHT : 50px;
+
 html, body{
   overflow: hidden;
   margin: 0px;
   padding: 0px;
   background-color: #bc8f8f;
+}
+.loader{
+  div{
+    position: absolute;
+    width:$LOADER_WIDTH;
+    height: $LOADER_HEIGHT;
+    margin-left: -$LOADER_WIDTH/2;
+    margin-top: -$LOADER_HEIGHT/2;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 1px #fff dashed;
+    box-shadow:inset 0px 0px 0px 1px #fff;
+    -webkit-animation: loader 5s linear infinite;
+    -moz-animation: loader 5s linear infinite;
+    animation: loader 5s linear infinite;
+  }
+  label{
+    position: absolute;
+    margin-top: 15;
+    top: 50%;
+    left: 50%;
+    font-size: .7em;
+    color: #fff;
+  }
+}
+
+
+@-webkit-keyframes loader {
+  0% { -webkit-transform:rotate(0deg);}
+  100% { -webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes loader {
+  0% { -moz-transform:rotate(0deg);}
+  100% { -moz-transform:rotate(360deg)}
+}
+@keyframes loader {
+  0% { transform:rotate(0deg);}
+  100% {transform:rotate(360deg)}
 }
