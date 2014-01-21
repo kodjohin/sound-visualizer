@@ -64,7 +64,7 @@ document.addEventListener('bufferLoaded', onSoundLoaded);
 
 function onSoundLoaded(){
     document.removeEventListener('bufferLoaded',onSoundLoaded);
-    WebAudio.source.start();
+    WebAudio.source.start(0);
     WebAudio.isPlaying = true;
     draw();
     cvs.style.visibility = 'visible';
