@@ -1,7 +1,69 @@
-/* line 1, main.scss */
+/* line 4, main.scss */
 html, body {
   overflow: hidden;
   margin: 0px;
   padding: 0px;
   background-color: #bc8f8f;
+}
+
+/* line 11, main.scss */
+.loader div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  margin-top: -25px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px #fff dashed;
+  box-shadow: inset 0px 0px 0px 1px #fff;
+  -webkit-animation: loader 5s linear infinite;
+  -moz-animation: loader 5s linear infinite;
+  animation: loader 5s linear infinite;
+}
+/* line 26, main.scss */
+.loader label {
+  position: absolute;
+  margin-top: 15;
+  top: 50%;
+  left: 50%;
+  font-size: .7em;
+  color: #fff;
+}
+
+@-webkit-keyframes loader {
+  /* line 38, main.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 39, main.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes loader {
+  /* line 42, main.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 43, main.scss */
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  /* line 46, main.scss */
+  0% {
+    transform: rotate(0deg);
+  }
+
+  /* line 47, main.scss */
+  100% {
+    transform: rotate(360deg);
+  }
 }
